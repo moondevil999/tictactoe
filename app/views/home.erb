@@ -1,0 +1,21 @@
+<div class='container'>
+  <button class="btn btn-default"><a href='/game/create'>Create Game</a></button>
+
+  <div class='games'>
+    <h3>Game available</h3><br>
+    <table>
+      <tr>
+        <td><b>Host</b></td>
+        <td><b>Join Game</b></td>
+      </tr>
+      <% @games.each do |g| %>
+        <tr>
+          <td><%= User.find(g.p1_id).name %></td>
+          <td><button class='btn btn-link'><a href='/game/<%=g.id%>/join'>Join</a></button></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+</div>
+

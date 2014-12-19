@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <div class='top-nav'>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Fic-Fac-Foe</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li id='nav-user'>
+            <%if session[:name]%>
+              Welcome! <%= session[:name]%>&nbsp&nbsp<a href="/logout"><button class="btn btn-primary">Logout</button></a>
+            <%else%>
+              <a href='/'><button class="btn btn-primary">Login</button></a>
+            <%end%>
+          </li>
+        </ul>
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <%= yield %>
+</body>
+</html>

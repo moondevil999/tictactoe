@@ -1,0 +1,33 @@
+<div>
+  <h2>Start play!</h2>
+  <table width=80%>
+    <tr>
+      <td><p>Player 1:</p></td>
+      <td><p>Player 2:</p></td>
+    </tr>
+      <td><p id='player1-inp'><%= @player1.name%></p></td>
+      <td><p id='player2-inp'><%= @player2.name%></p></td>
+    <tr>
+    </tr>
+  </table>
+
+  <div id='board'>
+    <% if @currentplayer.id === @game.starting_player_id %>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+    <% end %>
+  </div>
+</div>

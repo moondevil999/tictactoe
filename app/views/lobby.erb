@@ -1,0 +1,10 @@
+<div class='container'>
+  <h3>Game Lobby</h3>
+  <p>Player 1: <%= User.find(@game.p1_id).name %></p>
+  <% if @game.p2_id %>
+    <p>Player 2: <%= User.find(@game.p2_id).name %></p>
+    <a href='/game/<%=@game.id%>/start'><button class='btn btn-primary'>Start Game</button></a>
+  <% else %>
+    <span class="label label-danger">Waiting</span>
+  <% end %>
+</div>
